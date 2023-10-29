@@ -1,0 +1,19 @@
+.areaScore{
+    display:flex;
+    flex-direction: column;
+    padding-top:1%;
+    grid-area: 1 / 1 / 2 / 5;
+    height: 40%;
+
+    .imgScore{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .resultScore{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    
+}

@@ -1,11 +1,11 @@
 import Score from "../components/Score";
-import BoardGame from "../components/BoardGame"
+import AreaGame from "../components/AreaGame";
 
 const Game = () => {
     return (
         <div className="game">
             <Score/>
-            <BoardGame/>
+            <AreaGame/>
         </div>
     );
 };

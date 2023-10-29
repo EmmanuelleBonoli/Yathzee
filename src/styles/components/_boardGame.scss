@@ -1,0 +1,29 @@
+.boardGame{
+    background-image: url("../../public/images/GameTrack.png");
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    grid-area: 1 / 2 / 3 / 4;
+ 
+}
+
+
+ .boardGame2{
+     display: grid;
+     height: 100%;
+     width: 100%;
+     grid-template-columns: repeat(2, 1fr) repeat(3, 0);
+     grid-template-rows: repeat(2, 1fr) repeat(3, 0);
+    .playArea{
+        grid-area: 1 / 1 / 3 / 3;
+        width: 100%;
+        height: 50%;
+    }
+
+    .saveArea{
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+ }
