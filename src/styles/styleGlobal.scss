@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+:root {
+    --primary-color: rgb(153, 169, 143);
+    --primary-light: #C1D0B5;
+    --primary-dark: rgb(15, 45, 22);
+    --secondary-color: rgb(255, 248, 224);
+    --radius: 20px;
+}
+
+.root{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formatMenu {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 60vw;
+    height: 80vh;
+    border-radius: var(--radius);
+  }
