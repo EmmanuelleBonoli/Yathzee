@@ -1,23 +1,70 @@
 import PropTypes from "prop-types";
+import { useState, useEffect, useContext } from "react";
+import { uid } from "uid";
 import dices from "./dices";
+import DicesContext from "./DiceContext";
 
-const BoardGame = ({saveDices, resultDices}) => {
+const BoardGame = ({ affDices }) => {
+  const [affDicesSave, setAffDicesSave] = useState([])
+  const { saveDices, setSaveDices, resultDices, setResultDices } = useContext(DicesContext);
 
-//   resultDices.array.forEach(element => {
-    
-//   });
+  function SaveDice(index, fromArea) {
+    const clickedDiceValue =
+      fromArea === "playArea"
+        ? affDices[index].value
+        : affDicesSave[index].value;
+    if (fromArea === "playArea") {
+      const updatedResultDices = [...resultDices]
+      updatedResultDices.splice(index, 1)
+      setResultDices(updatedResultDices)
+      setSaveDices((prevSaveDices) => [...prevSaveDices, clickedDiceValue])
+    } else if (fromArea === "saveArea") {
+      const updatedSaveDices = [...saveDices]
+      updatedSaveDices.splice(index, 1)
+      setSaveDices(updatedSaveDices)
+      setResultDices((prevResultDices) => [
+        ...prevResultDices,
+        clickedDiceValue,
+      ]);
+    }
+  }
+
+  useEffect(() => {
+    const updatedAffDicesSave = saveDices.map((saveDice) => {
+      return dices.find((dice) => dice.value === saveDice);
+    });
+    setAffDicesSave(updatedAffDicesSave)
+  }, [saveDices, setAffDicesSave])
 
   return (
     <div className="boardGame2">
-      <div className="playArea">{resultDices}</div>
-      <div className="saveArea">{saveDices}</div>
+      <div className="playArea">
+        {affDices.map((dice, index) => (
+          <img
+            key={uid(10)}
+            className="formatDice"
+            onClick={() => SaveDice(index, "playArea")}
+            src={dice.image}
+            alt={dice.name}
+          />
+        ))}
+      </div>
+      <div className="saveArea">
+        {affDicesSave.map((dice, index) => (
+          <img
+            key={uid(10)}
+            className="formatDice"
+            onClick={() => SaveDice(index, "saveArea")}
+            src={dice.image}
+            alt={dice.name}
+          />
+        ))}
+      </div>
     </div>
-  );
-};
-
+  )
+}
 BoardGame.propTypes = {
-    saveDices: PropTypes.array.isRequired,
-    resultDices: PropTypes.array.isRequired,
-  };
+  affDices: PropTypes.array.isRequired,
+}
 
 export default BoardGame;

@@ -1,7 +1,7 @@
 const BackMenu = () => {
     return (
         <div className='backMenu'>
-           <img className="formatDice"src="../public/images/Menu.png"/>
+           <img className="formatDice"src="../images/Menu.png"/>
         </div>
     );
 };

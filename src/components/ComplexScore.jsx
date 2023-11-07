@@ -15,42 +15,42 @@ const ComplexScore = () => {
       <div className="imgScore">
         <img
           className="formatDice"
-          src="../public/images/ThreeKind.png"
+          src="../images/ThreeKind.png"
           alt="Brelan"
         />
         <img
           className="formatDice"
-          src="../public/images/FourKind.png"
+          src="../images/FourKind.png"
           alt="Carré"
         />
         <img
           className="formatDice"
-          src="../public/images/Full.png"
+          src="../images/Full.png"
           alt="Full"
         />
         <img
           className="formatDice"
-          src="../public/images/SmallStraight.png"
+          src="../images/SmallStraight.png"
           alt="Petite Suite"
         />
         <img
           className="formatDice"
-          src="../public/images/LargeStraight.png"
+          src="../images/LargeStraight.png"
           alt="Grande Suite"
         />
         <img
           className="formatDice"
-          src="../public/images/Yahtzee.png"
+          src="../images/Yahtzee.png"
           alt="Yahtzee"
         />
         <img
           className="formatDice"
-          src="../public/images/Chance.png"
+          src="../images/Chance.png"
           alt="Chance"
         />
         <img
           className="formatDice"
-          src="../public/images/Total.png"
+          src="../images/Total.png"
           alt="Total"
         />
       </div>
