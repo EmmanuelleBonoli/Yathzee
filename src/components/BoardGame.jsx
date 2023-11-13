@@ -5,23 +5,24 @@ import dices from "./dices";
 import DicesContext from "./DiceContext";
 
 const BoardGame = ({ affDices }) => {
-  const [affDicesSave, setAffDicesSave] = useState([])
-  const { saveDices, setSaveDices, resultDices, setResultDices } = useContext(DicesContext);
+  const [affDicesSave, setAffDicesSave] = useState([]);
+  const { saveDices, setSaveDices, resultDices, setResultDices } =
+    useContext(DicesContext);
 
-  function SaveDice(index, fromArea) {
+  function MoveDice(index, fromArea) {
     const clickedDiceValue =
       fromArea === "playArea"
         ? affDices[index].value
         : affDicesSave[index].value;
     if (fromArea === "playArea") {
-      const updatedResultDices = [...resultDices]
-      updatedResultDices.splice(index, 1)
-      setResultDices(updatedResultDices)
-      setSaveDices((prevSaveDices) => [...prevSaveDices, clickedDiceValue])
+      const updatedResultDices = [...resultDices];
+      updatedResultDices.splice(index, 1);
+      setResultDices(updatedResultDices);
+      setSaveDices((prevSaveDices) => [...prevSaveDices, clickedDiceValue]);
     } else if (fromArea === "saveArea") {
-      const updatedSaveDices = [...saveDices]
-      updatedSaveDices.splice(index, 1)
-      setSaveDices(updatedSaveDices)
+      const updatedSaveDices = [...saveDices];
+      updatedSaveDices.splice(index, 1);
+      setSaveDices(updatedSaveDices);
       setResultDices((prevResultDices) => [
         ...prevResultDices,
         clickedDiceValue,
@@ -33,8 +34,8 @@ const BoardGame = ({ affDices }) => {
     const updatedAffDicesSave = saveDices.map((saveDice) => {
       return dices.find((dice) => dice.value === saveDice);
     });
-    setAffDicesSave(updatedAffDicesSave)
-  }, [saveDices, setAffDicesSave])
+    setAffDicesSave(updatedAffDicesSave);
+  }, [saveDices, setAffDicesSave]);
 
   return (
     <div className="boardGame2">
@@ -42,8 +43,8 @@ const BoardGame = ({ affDices }) => {
         {affDices.map((dice, index) => (
           <img
             key={uid(10)}
-            className="formatDice"
-            onClick={() => SaveDice(index, "playArea")}
+            className="formatDice selectedDice"
+            onClick={() => MoveDice(index, "playArea")}
             src={dice.image}
             alt={dice.name}
           />
@@ -53,18 +54,18 @@ const BoardGame = ({ affDices }) => {
         {affDicesSave.map((dice, index) => (
           <img
             key={uid(10)}
-            className="formatDice"
-            onClick={() => SaveDice(index, "saveArea")}
+            className="formatDice selectedDice"
+            onClick={() => MoveDice(index, "saveArea")}
             src={dice.image}
             alt={dice.name}
           />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 BoardGame.propTypes = {
   affDices: PropTypes.array.isRequired,
-}
+};
 
 export default BoardGame;

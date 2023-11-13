@@ -4,7 +4,27 @@
   height: 80vh;
   border-radius: var(--radius);
 
-  .formatDice{
-    width:4vw;
-}
+  .formatDice {
+    width: 4vw;
+  }
+
+  .selectedDice {
+    &:hover {
+      cursor: pointer;
+      filter: brightness(60%);
+      transition: all 0.3s ease;
+    }
+    &[disabled] {
+      filter: brightness(60%);
+      cursor: initial;
+    }
+  }
+
+  .endGame{
+    display: flex;
+    margin: auto;
+    padding: 2%;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+  }
 }

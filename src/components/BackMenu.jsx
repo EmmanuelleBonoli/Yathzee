@@ -1,9 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 const BackMenu = () => {
-    return (
-        <div className='backMenu'>
-           <img className="formatDice"src="../images/Menu.png"/>
-        </div>
-    );
+  const navigate = useNavigate();
+  function returnMenu() {
+    navigate("/");
+  }
+  return (
+    <div className="backMenu">
+      <img
+        onClick={returnMenu}
+        className="formatDice selectedDice"
+        src="../images/Menu.png"
+      />
+    </div>
+  );
 };
 
 export default BackMenu;

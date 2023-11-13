@@ -28,16 +28,53 @@ function App() {
     },
   ]);
 
-  const [saveDices, setSaveDices] = useState([])
+  const [counter, setCounter] = useState(3);
+  const [saveDices, setSaveDices] = useState([]);
   const [resultDices, setResultDices] = useState([0, 0, 0, 0, 0]);
-  const dicesGlobal = [resultDices, saveDices]
-
+  const dicesGlobal = [resultDices, saveDices];
+  const [resultTotalSimple, setResultTotalSimple] = useState(0);
+  const [resultTotalComplex, setResultTotalComplex] = useState(0);
+  const [disabledSimple, setDisabledSimple] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [disabledComplex, setDisabledComplex] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   return (
-  <DicesContext.Provider value={{dicesGlobal:dicesGlobal,saveDices:saveDices,setSaveDices:setSaveDices,resultDices:resultDices, setResultDices:setResultDices}}>
-  <RouterProvider router={router} />
-  </DicesContext.Provider>
-  )
+    <DicesContext.Provider
+      value={{
+        disabledComplex,
+        setDisabledComplex,
+        disabledSimple,
+        setDisabledSimple,
+        dicesGlobal,
+        saveDices,
+        setSaveDices,
+        resultDices,
+        setResultDices,
+        setCounter,
+        counter,
+        resultTotalSimple,
+        setResultTotalSimple,
+        resultTotalComplex,
+        setResultTotalComplex,
+      }}
+    >
+      <RouterProvider router={router} />
+    </DicesContext.Provider>
+  );
 }
 
 export default App;
