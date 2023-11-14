@@ -1,10 +1,9 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import DicesContext from "./DiceContext";
 
 const GlobalScore = () => {
-  const { resultTotalComplex, resultTotalSimple } = useContext(DicesContext);
-  const [finalScore, setFinalScore] = useState(0);
-
+  const { resultTotalComplex, resultTotalSimple, setFinalScore, finalScore } = useContext(DicesContext);
+  
   useEffect(() => {
     setFinalScore(resultTotalComplex + resultTotalSimple);
   }, [setFinalScore, resultTotalComplex, resultTotalSimple]);

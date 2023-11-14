@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import DicesContext from "../components/DiceContext";
 
@@ -9,25 +9,30 @@ const Menu = () => {
     setCounter,
     setResultDices,
     setSaveDices,
+    setDisabledComplex,
+    setDisabledSimple,
   } = useContext(DicesContext);
 
+  const navigate = useNavigate();
+
   function handleReset() {
-    setTimeout(() => {
-      setResultTotalSimple(0);
-      setResultTotalComplex(0);
-      setCounter(3);
-      setResultDices([0, 0, 0, 0, 0]);
-      setSaveDices([]);
-    }, 5000);
+    setResultTotalSimple(0);
+    setResultTotalComplex(0);
+    setCounter(3);
+    setResultDices([0, 0, 0, 0, 0]);
+    setSaveDices([]);
+    setDisabledSimple([false, false, false, false, false, false]);
+    setDisabledComplex([false, false, false, false, false, false, false]);
+    navigate("/jeu-yathzee");
   }
 
   return (
     <div className="menu">
       <div className="formatMenu">
         <NavLink to="/jeu-yathzee">Continuer la partie</NavLink>
-        <NavLink to="/jeu-yathzee" onClick={handleReset}>
+        <button type="button" onClick={handleReset}>
           Nouvelle partie
-        </NavLink>
+        </button>
         <NavLink to="/settings">Paramètres</NavLink>
       </div>
     </div>

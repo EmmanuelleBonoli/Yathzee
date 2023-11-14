@@ -9,6 +9,9 @@ const Game = () => {
     disabledSimple,
     setDisabledComplex,
     setDisabledSimple,
+    setResultTotalComplex,
+    setResultTotalSimple,
+    finalScore
   } = useContext(DicesContext);
 
   const [endGame, setEndGame] = useState(false);
@@ -16,7 +19,9 @@ const Game = () => {
   function handleEndGame() {
     setDisabledComplex([false, false, false, false, false, false, false]);
     setDisabledSimple([false, false, false, false, false, false]);
-    setEndGame(false)
+    setEndGame(false);
+    setResultTotalSimple(0);
+    setResultTotalComplex(0);
   }
 
   useEffect(() => {
@@ -34,8 +39,8 @@ const Game = () => {
         <AreaGame />
       ) : (
         <button onClick={handleEndGame} type="button" className="endGame">
-          <div>{`Félicitations !`}</div>
-          <div>{`Nouvelle Partie`}</div>
+          <div>{`Félicitations : score final à `}{finalScore}{` !!!`}</div>
+          <div>{`Nouvelle Partie ?`}</div>
         </button>
       )}
     </div>

@@ -12,10 +12,8 @@ const SimpleScore = () => {
     resultTotalSimple,
     setResultTotalSimple,
     disabledSimple,
-    setDisabledSimple
+    setDisabledSimple,
   } = useContext(DicesContext);
-
-  
 
   const [resultDice1, setResultDice1] = useState(0);
   const [resultDice2, setResultDice2] = useState(0);

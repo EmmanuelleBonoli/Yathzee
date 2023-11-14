@@ -34,6 +34,7 @@ function App() {
   const dicesGlobal = [resultDices, saveDices];
   const [resultTotalSimple, setResultTotalSimple] = useState(0);
   const [resultTotalComplex, setResultTotalComplex] = useState(0);
+  const [finalScore, setFinalScore] = useState(0);
   const [disabledSimple, setDisabledSimple] = useState([
     false,
     false,
@@ -55,6 +56,8 @@ function App() {
   return (
     <DicesContext.Provider
       value={{
+        finalScore,
+        setFinalScore,
         disabledComplex,
         setDisabledComplex,
         disabledSimple,

@@ -10,7 +10,7 @@ const ComplexScore = () => {
     setResultDices,
     setSaveDices,
     disabledComplex,
-    setDisabledComplex
+    setDisabledComplex,
   } = useContext(DicesContext);
 
   const [resultThreeKind, setResultThreeKind] = useState(0);
@@ -21,7 +21,6 @@ const ComplexScore = () => {
   const [resultYahtzee, setResultYahtzee] = useState(0);
   const [resultChance, setResultChance] = useState(0);
 
-
   const updatedDisabled = [...disabledComplex];
 
   useEffect(() => {
@@ -31,6 +30,14 @@ const ComplexScore = () => {
     let nbDiceFour = [];
     let nbDiceFive = [];
     let nbDiceSix = [];
+
+    setResultThreeKind(disabledComplex[0] ? resultThreeKind : 0);
+    setResultFourKind(disabledComplex[1] ? resultFourKind : 0);
+    setResultFull(disabledComplex[2] ? resultFull : 0);
+    setResultSmallStraight(disabledComplex[3] ? resultSmallStraight : 0);
+    setResultLargeStraight(disabledComplex[4] ? resultLargeStraight : 0);
+    setResultYahtzee(disabledComplex[5] ? resultYahtzee : 0);
+    setResultChance(disabledComplex[6] ? resultChance : 0);
 
     // Maj Three and Four Kind and Yahtzee
     let dicesGSort = dicesGlobal[0].concat(dicesGlobal[1]);

@@ -1,4 +1,9 @@
 .settings {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .rules {
     width: 50vw;
     padding: 20px;
@@ -8,9 +13,13 @@
   p {
     margin: 10px 0 10px 0;
   }
-  .backMenu{
-    width: 20vw;
+
+  .backMenuSettings {
+    width: 25vw;
+    display: flex;
+    justify-content: center;
   }
+
   a {
     text-align: center;
     text-decoration: none;

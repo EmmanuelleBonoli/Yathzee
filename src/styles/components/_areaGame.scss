@@ -1,7 +1,7 @@
-.areaGame{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) 0;
-    grid-template-rows: repeat(2, 1fr) repeat(3, 0);
-    grid-area: 2 / 1 / 4 / 5;
-    height: 60%;
+.areaGame {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 0;
+  grid-template-rows: repeat(2, 1fr) repeat(3, 0);
+  grid-area: 2 / 1 / 4 / 5;
+  height: 60%;
 }

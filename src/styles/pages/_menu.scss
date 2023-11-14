@@ -19,4 +19,21 @@
       color: white;
     }
   }
+
+  button {
+    color: black;
+    width: 20vw;
+    height: 5vh;
+    border-radius: var(--radius);
+    border-style: none;
+    box-shadow: 2px 3px var(--primary-dark);
+    background: radial-gradient(var(--primary-light), var(--primary-color));
+    border: 1px solid var(--primary-dark);
+
+    &:hover {
+      cursor: pointer;
+      background: var(--primary-dark);
+      color: white;
+    }
+  }
 }
