@@ -10,7 +10,7 @@ const BackMenu = () => {
       <img
         onClick={returnMenu}
         className="formatDice selectedDice"
-        src="../images/Menu.png"
+        src="../images/backMenu.png"
       />
     </div>
   );

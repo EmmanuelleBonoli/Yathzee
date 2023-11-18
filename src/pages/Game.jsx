@@ -39,7 +39,7 @@ const Game = () => {
         <AreaGame />
       ) : (
         <button onClick={handleEndGame} type="button" className="endGame">
-          <div>{`Félicitations : score final à `}{finalScore}{` !!!`}</div>
+          <div>{`Félicitations : Score final à `}{finalScore}{` !!!`}</div>
           <div>{`Nouvelle Partie ?`}</div>
         </button>
       )}

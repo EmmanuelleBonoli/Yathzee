@@ -37,7 +37,7 @@ const ComplexScore = () => {
     setResultSmallStraight(disabledComplex[3] ? resultSmallStraight : 0);
     setResultLargeStraight(disabledComplex[4] ? resultLargeStraight : 0);
     setResultYahtzee(disabledComplex[5] ? resultYahtzee : 0);
-    setResultChance(disabledComplex[6] ? resultChance : 0);
+    setResultChance(disabledComplex[6] ? resultChance : 0); 
 
     // Maj Three and Four Kind and Yahtzee
     let dicesGSort = dicesGlobal[0].concat(dicesGlobal[1]);
@@ -308,54 +308,54 @@ const ComplexScore = () => {
       <div className="imgScore">
         <img
           className="formatDice selectedDice"
-          src="../images/ThreeKind.png"
+          src="../images/threeKindBlue.png"
           alt="Brelan"
           disabled={disabledComplex[0]}
           onClick={handleThreeKind}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/FourKind.png"
+          src="../images/fourKindBlue.png"
           alt="Carré"
           disabled={disabledComplex[1]}
           onClick={handleFourKind}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/Full.png"
+          src="../images/fullBlue.png"
           alt="Full"
           disabled={disabledComplex[2]}
           onClick={handleFull}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/SmallStraight.png"
+          src="../images/smallStraightBlue.png"
           alt="Petite Suite"
           disabled={disabledComplex[3]}
           onClick={handleSmallStraight}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/LargeStraight.png"
+          src="../images/largeStraightBlue.png"
           alt="Grande Suite"
           disabled={disabledComplex[4]}
           onClick={handleLargeStraight}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/Yahtzee.png"
+          src="../images/YamBlue.png"
           alt="Yahtzee"
           disabled={disabledComplex[5]}
           onClick={handleYahtzee}
         />
         <img
           className="formatDice selectedDice"
-          src="../images/Chance.png"
+          src="../images/chanceBlue.png"
           alt="Chance"
           disabled={disabledComplex[6]}
           onClick={handleChance}
         />
-        <img className="formatDice" src="../images/Total.png" alt="Total" />
+        <img className="formatDice" src="../images/totalBlue.png" alt="Total" />
       </div>
       <div className="resultScore">
         <div>{resultThreeKind}</div>

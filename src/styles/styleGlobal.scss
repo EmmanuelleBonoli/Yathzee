@@ -2,13 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 :root {
-  --primary-color: rgb(153, 169, 143);
-  --primary-light: #c1d0b5;
-  --primary-dark: rgb(15, 45, 22);
-  --secondary-color: rgb(255, 248, 224);
+  --primary-color: #427D9D;
+  --primary-light: #427D9D;
+  --primary-dark: #164863;
+  --secondary-color: #DDF2FD;
   --radius: 20px;
 }
 
@@ -33,4 +34,34 @@ body {
   width: 60vw;
   height: 80vh;
   border-radius: var(--radius);
+  border: solid 1px black;
+
+  @media screen and (max-width: 1100px) {
+    width: 95vw;
+    height: 90vh;
+  }
+}
+
+.arrow{
+  width: 20vw;
+}
+
+.orientationPortrait{
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15vh;
+  font-weight: bold;
+  color: white;
+
+  .logoYahtzee{
+    width: 80vw;
+  }
+  p{
+    width: 80vw;
+  }
 }

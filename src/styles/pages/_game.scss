@@ -3,6 +3,7 @@
   width: 80vw;
   height: 80vh;
   border-radius: var(--radius);
+  font-size: 1.5rem;
 
   .formatDice {
     width: 4vw;
@@ -15,7 +16,7 @@
       transition: all 0.3s ease;
     }
     &[disabled] {
-      filter: brightness(60%);
+      filter: brightness(40%);
       cursor: initial;
     }
   }
@@ -43,6 +44,10 @@
 
   @media screen and (max-width: 1100px) {
     width: 95vw;
-    height: 90vh;
+    height: 95vh;
+
+    .formatDice {
+      width: 5vw;
+    }
   }
 }

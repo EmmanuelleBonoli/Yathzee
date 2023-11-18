@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import DicesContext from "./DiceContext";
-import dices from "./dices";
+import scoreDices from "./dicesScore";
 import { uid } from "uid";
 
 const SimpleScore = () => {
@@ -84,7 +84,7 @@ const SimpleScore = () => {
   return (
     <div className="areaScore">
       <div className="imgScore">
-        {dices.slice(0, -1).map((dice, index) => (
+        {scoreDices.slice(0, -1).map((dice, index) => (
           <img
             key={uid(10)}
             className="formatDice selectedDice"
@@ -96,8 +96,16 @@ const SimpleScore = () => {
             alt={dice.name}
           />
         ))}
-        <img className="formatDice" src="../images/Bonus.png" alt="dé Bonus" />
-        <img className="formatDice" src="../images/Total.png" alt="dé Total" />
+        <img
+          className="formatDice"
+          src="../images/bonusBlue.png"
+          alt="dé Bonus"
+        />
+        <img
+          className="formatDice"
+          src="../images/totalBlue.png"
+          alt="dé Total"
+        />
       </div>
       <div className="resultScore">
         <div>{resultDice1}</div>

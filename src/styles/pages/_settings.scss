@@ -1,12 +1,15 @@
 .settings {
   height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
   .rules {
     width: 50vw;
-    padding: 20px;
+    padding: 2%;
     text-align: justify;
   }
 
@@ -22,10 +25,12 @@
 
   a {
     text-align: center;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: black;
-    height: 5vh;
-    padding: 2%;
+    height: 25px;
+    padding: 3%;
     border-radius: var(--radius);
     border-style: none;
     box-shadow: 2px 3px var(--primary-dark);
@@ -36,6 +41,12 @@
       cursor: pointer;
       background: var(--primary-dark);
       color: white;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    .rules {
+      width: 80vw;
     }
   }
 }

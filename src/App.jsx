@@ -5,6 +5,7 @@ import Game from "./pages/Game.jsx";
 import Menu from "./pages/Menu.jsx";
 import Settings from "./pages/Settings.jsx";
 import DicesContext from "./components/DiceContext.jsx";
+import useScreenOrientation from "./components/useScreenOrientation";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ function App() {
     },
   ]);
 
+  const orientation = useScreenOrientation();
   const [counter, setCounter] = useState(3);
   const [saveDices, setSaveDices] = useState([]);
   const [resultDices, setResultDices] = useState([0, 0, 0, 0, 0]);
@@ -54,29 +56,53 @@ function App() {
   ]);
 
   return (
-    <DicesContext.Provider
-      value={{
-        finalScore,
-        setFinalScore,
-        disabledComplex,
-        setDisabledComplex,
-        disabledSimple,
-        setDisabledSimple,
-        dicesGlobal,
-        saveDices,
-        setSaveDices,
-        resultDices,
-        setResultDices,
-        setCounter,
-        counter,
-        resultTotalSimple,
-        setResultTotalSimple,
-        resultTotalComplex,
-        setResultTotalComplex,
-      }}
-    >
-      <RouterProvider router={router} />
-    </DicesContext.Provider>
+    <>
+      {orientation === "portrait-primary" ? (
+        <div className="orientationPortrait">
+          <img
+            className="logoYahtzee"
+            src="../images/MajorGames1.png"
+            alt="logo Yahtzee"
+          />
+
+          <p>
+            Afin de profiter pleinement du jeu, veuillez tourner votre appareil.
+          </p>
+          <p>
+            {" "}
+            <img
+              className="arrow"
+              src="../images/arrow.png"
+              alt="flèche tournée"
+            />
+          </p>
+        </div>
+      ) : (
+        <DicesContext.Provider
+          value={{
+            finalScore,
+            setFinalScore,
+            disabledComplex,
+            setDisabledComplex,
+            disabledSimple,
+            setDisabledSimple,
+            dicesGlobal,
+            saveDices,
+            setSaveDices,
+            resultDices,
+            setResultDices,
+            setCounter,
+            counter,
+            resultTotalSimple,
+            setResultTotalSimple,
+            resultTotalComplex,
+            setResultTotalComplex,
+          }}
+        >
+          <RouterProvider router={router} />
+        </DicesContext.Provider>
+      )}
+    </>
   );
 }
 
