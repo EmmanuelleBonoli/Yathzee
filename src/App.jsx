@@ -6,6 +6,7 @@ import Menu from "./pages/Menu.jsx";
 import Settings from "./pages/Settings.jsx";
 import DicesContext from "./components/DiceContext.jsx";
 import useScreenOrientation from "./components/useScreenOrientation";
+import LoadingPage from "./pages/LoadingPage.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,6 +16,10 @@ function App() {
       children: [
         {
           index: true,
+          element: <LoadingPage />,
+        },
+        {
+          path: "menu",
           element: <Menu />,
         },
         {

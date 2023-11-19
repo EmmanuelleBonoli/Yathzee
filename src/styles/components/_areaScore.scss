@@ -1,9 +1,11 @@
 .areaScore {
   display: flex;
   flex-direction: column;
-  padding-top: 1%;
+  padding: 1% 0 1% 0%;
   grid-area: 1 / 1 / 2 / 5;
   height: 40%;
+  justify-content: space-around;
+  gap:10%;
 
   .imgScore {
     display: flex;

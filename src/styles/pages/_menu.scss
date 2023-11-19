@@ -3,9 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: var(--font-size-desktop);
 
   .logoMenu {
     padding: 3%;
+    height: 30vh;
   }
   a {
     display: flex;
@@ -34,6 +36,7 @@
     font-weight: bold;
     width: 20vw;
     height: 5vh;
+    font-size: var(--font-size-desktop);
     border-radius: var(--radius);
     border-style: none;
     box-shadow: 2px 3px var(--primary-dark);
@@ -58,6 +61,7 @@
     button,
     a {
       width: 25vw;
+      font-size: var(--font-size-mobile);
     }
   }
 }

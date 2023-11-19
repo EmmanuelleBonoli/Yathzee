@@ -21,7 +21,7 @@ const Settings = () => {
           </p>
         </div>
         <div className="backMenuSettings">
-          <NavLink to="/" className="btn-menu">
+          <NavLink to="/menu" className="btn-menu">
             Retour au Menu
           </NavLink>
         </div>

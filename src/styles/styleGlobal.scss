@@ -11,6 +11,8 @@
   --primary-dark: #164863;
   --secondary-color: #DDF2FD;
   --radius: 20px;
+  --font-size-desktop: 1.5rem;
+  --font-size-mobile: 1rem;
 }
 
 body {
@@ -57,6 +59,7 @@ body {
   gap: 15vh;
   font-weight: bold;
   color: white;
+  font-size: var(--font-size-desktop);
 
   .logoYahtzee{
     width: 80vw;

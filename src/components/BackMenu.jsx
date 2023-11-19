@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const BackMenu = () => {
   const navigate = useNavigate()
   function returnMenu() {
-    navigate("/")
+    navigate("/menu")
   }
   return (
     <div className="backMenu">
