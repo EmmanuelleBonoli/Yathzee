@@ -27,7 +27,7 @@ function App() {
           element: <Settings />,
         },
         {
-          path: "jeu-yathzee",
+          path: "yathzee",
           element: <Game />,
         },
       ],
