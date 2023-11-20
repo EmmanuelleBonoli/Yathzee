@@ -59,6 +59,20 @@ function App() {
     false,
     false,
   ]);
+  const [resultDice1, setResultDice1] = useState(0);
+  const [resultDice2, setResultDice2] = useState(0);
+  const [resultDice3, setResultDice3] = useState(0);
+  const [resultDice4, setResultDice4] = useState(0);
+  const [resultDice5, setResultDice5] = useState(0);
+  const [resultDice6, setResultDice6] = useState(0);
+  const [resultBonus, setResultBonus] = useState(0);
+  const [resultThreeKind, setResultThreeKind] = useState(0);
+  const [resultFourKind, setResultFourKind] = useState(0);
+  const [resultFull, setResultFull] = useState(0);
+  const [resultSmallStraight, setResultSmallStraight] = useState(0);
+  const [resultLargeStraight, setResultLargeStraight] = useState(0);
+  const [resultYahtzee, setResultYahtzee] = useState(0);
+  const [resultChance, setResultChance] = useState(0);
 
   return (
     <>
@@ -85,6 +99,34 @@ function App() {
       ) : (
         <DicesContext.Provider
           value={{
+            resultThreeKind,
+            resultFourKind,
+            resultFull,
+            resultSmallStraight,
+            resultLargeStraight,
+            resultYahtzee,
+            resultChance,
+            setResultChance,
+            setResultYahtzee,
+            setResultLargeStraight,
+            setResultThreeKind,
+            setResultFourKind,
+            setResultFull,
+            setResultSmallStraight,
+            resultDice1,
+            resultDice2,
+            resultDice3,
+            resultDice4,
+            resultDice5,
+            resultDice6,
+            setResultDice1,
+            setResultDice2,
+            setResultDice3,
+            setResultDice4,
+            setResultDice5,
+            setResultDice6,
+            setResultBonus,
+            resultBonus,
             finalScore,
             setFinalScore,
             disabledComplex,

@@ -1,10 +1,9 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import DicesContext from "./DiceContext";
 import scoreDices from "./dicesScore";
 import { uid } from "uid";
 
 const SimpleScore = () => {
-  
   const {
     dicesGlobal,
     setCounter,
@@ -14,35 +13,45 @@ const SimpleScore = () => {
     setResultTotalSimple,
     disabledSimple,
     setDisabledSimple,
+    resultDice1,
+    resultDice2,
+    resultDice3,
+    resultDice4,
+    resultDice5,
+    resultDice6,
+    resultBonus,
+    setResultDice1,
+    setResultDice2,
+    setResultDice3,
+    setResultDice4,
+    setResultDice5,
+    setResultDice6,
+    setResultBonus,
   } = useContext(DicesContext);
 
-  const [resultDice1, setResultDice1] = useState(0);
-  const [resultDice2, setResultDice2] = useState(0);
-  const [resultDice3, setResultDice3] = useState(0);
-  const [resultDice4, setResultDice4] = useState(0);
-  const [resultDice5, setResultDice5] = useState(0);
-  const [resultDice6, setResultDice6] = useState(0);
-  const [resultBonus, setResultBonus] = useState(0);
-
-  // const [totalValues, setTotalValues] = useState([0,0,0,0,0,0])
+  //  const [totalValues, setTotalValues] = useState([0,0,0,0,0,0])
 
   useEffect(() => {
-    let totalValues = [0,0,0,0,0,0];
+    let totalValues = [0, 0, 0, 0, 0, 0];
     for (let i = 0; i < dicesGlobal.length; i++) {
       dicesGlobal[i].forEach((dice) => {
         totalValues[dice - 1] += dice;
       });
     }
-
     setResultDice1(disabledSimple[0] ? resultDice1 : totalValues[0]);
     setResultDice2(disabledSimple[1] ? resultDice2 : totalValues[1]);
     setResultDice3(disabledSimple[2] ? resultDice3 : totalValues[2]);
     setResultDice4(disabledSimple[3] ? resultDice4 : totalValues[3]);
     setResultDice5(disabledSimple[4] ? resultDice5 : totalValues[4]);
     setResultDice6(disabledSimple[5] ? resultDice6 : totalValues[5]);
-    
   }, [
     dicesGlobal,
+    setResultDice1,
+    setResultDice2,
+    setResultDice3,
+    setResultDice4,
+    setResultDice5,
+    setResultDice6,
     disabledSimple,
     resultDice1,
     resultDice2,

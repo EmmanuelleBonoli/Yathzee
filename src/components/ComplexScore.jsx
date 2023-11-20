@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import DicesContext from "./DiceContext";
 
 const ComplexScore = () => {
@@ -11,15 +11,21 @@ const ComplexScore = () => {
     setSaveDices,
     disabledComplex,
     setDisabledComplex,
+    resultThreeKind,
+    resultFourKind,
+    resultFull,
+    resultSmallStraight,
+    resultLargeStraight,
+    resultYahtzee,
+    resultChance,
+    setResultChance,
+    setResultYahtzee,
+    setResultLargeStraight,
+    setResultThreeKind,
+    setResultFourKind,
+    setResultFull,
+    setResultSmallStraight,
   } = useContext(DicesContext);
-
-  const [resultThreeKind, setResultThreeKind] = useState(0);
-  const [resultFourKind, setResultFourKind] = useState(0);
-  const [resultFull, setResultFull] = useState(0);
-  const [resultSmallStraight, setResultSmallStraight] = useState(0);
-  const [resultLargeStraight, setResultLargeStraight] = useState(0);
-  const [resultYahtzee, setResultYahtzee] = useState(0);
-  const [resultChance, setResultChance] = useState(0);
 
   const updatedDisabled = [...disabledComplex];
 
@@ -37,7 +43,7 @@ const ComplexScore = () => {
     setResultSmallStraight(disabledComplex[3] ? resultSmallStraight : 0);
     setResultLargeStraight(disabledComplex[4] ? resultLargeStraight : 0);
     setResultYahtzee(disabledComplex[5] ? resultYahtzee : 0);
-    setResultChance(disabledComplex[6] ? resultChance : 0); 
+    setResultChance(disabledComplex[6] ? resultChance : 0);
 
     // Maj Three and Four Kind and Yahtzee
     let dicesGSort = dicesGlobal[0].concat(dicesGlobal[1]);
@@ -217,6 +223,13 @@ const ComplexScore = () => {
     resultLargeStraight,
     resultYahtzee,
     resultChance,
+    setResultThreeKind,
+    setResultFourKind,
+    setResultFull,
+    setResultSmallStraight,
+    setResultLargeStraight,
+    setResultYahtzee,
+    setResultChance,
   ]);
 
   function handleThreeKind() {
