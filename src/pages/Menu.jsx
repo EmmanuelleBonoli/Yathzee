@@ -26,12 +26,12 @@ const Menu = () => {
     setSaveDices([]);
     setDisabledSimple([false, false, false, false, false, false]);
     setDisabledComplex([false, false, false, false, false, false, false]);
-    navigate("/yathzee");
+    navigate("/yahtzee");
   }
 
   function handleContinue(){
     if (disabledContinue === false){
-      navigate("/yathzee");
+      navigate("/yahtzee");
     }
   }
 
